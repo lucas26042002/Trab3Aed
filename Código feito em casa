@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct TreeNode {
+    int val;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};
+
+
+int return_min(int x, int y) {
+    if(x==-1)return y;
+    if(y==-1)return x;
+    else return x<y?x:y;
+}
+
+int findSecondMinimumValue(struct TreeNode* root){
+    if(root==NULL)
+    return -1;
+    if(root->left==NULL)
+    return -1;
+    int a=root->left->val, b=root->right->val;
+    if(a==b)
+    {
+        a=findSecondMinimumValue(root->left);
+        b=findSecondMinimumValue(root->right);
+        if(a==b)return -1;
+    }else{
+        if(a>b) b=findSecondMinimumValue(root->right);
+        else a=findSecondMinimumValue(root->left);
+    }
+    return return_min(a,b);
+}
+
+int main(){
+
+ struct TreeNode* root = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->val = 2;
+    
+    root->left = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->left->val = 2;
+    root->left->left = NULL;
+    root->left->right = NULL;
+
+    
+    root->right = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    root->right->val = 5;
+    root->right->left = NULL;
+    root->right->right = NULL;
+   
+    
+    int findSecondMinimumValue(struct TreeNode* root);
+    
+    int sec_min = findSecondMinimumValue(root);
+    printf("O segundo menor valor e: %d\n", sec_min);
+    
+    return 0;
+}
+
+
