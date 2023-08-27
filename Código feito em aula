@@ -1,0 +1,62 @@
+//Lucas Schneider Ludwig
+//Turma:m1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+  struct arvore{
+    int value;
+    struct arvore *right;
+    struct arvore *left;
+  }arvore;
+  
+  int arvore_creat(int value,struct arvore,int c,int raiz){
+    if (c=NULL)
+    printf("arvore vazia");
+    
+
+    else if(c=1 > c=2)
+        arvore *right;
+        
+    else if
+        arvore *left;
+        
+  }
+
+  int arvore_value(int value,int c){
+    //scanf("%d",&value);
+    if(value>0){
+       return NULL;
+       }
+    else{
+       arvore_creat(value);
+       c++;
+
+    }
+    }
+
+
+int findSecondMinimumValue(struct arvore* root,int value){
+   for(int i=0;i>value;i++){
+   root.value=min(root.left.value,root.right.value);
+   return root->value;
+   if(root->value=0)
+   return -1;
+   
+}
+
+
+}
+
+int main (){
+ int arvore_value(12);
+ int arvore_creat();
+ int findSecondMinimumValue();
+}
+
+
+
+    
+   
+    
+  
